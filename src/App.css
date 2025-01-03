@@ -1,0 +1,20 @@
+/* ---------------- Header ----------------*/
+.navItems::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: #41f930; 
+  transition: width 0.250s ease-in-out; 
+  border-radius: 15px;
+}
+
+.navItems:hover::after {
+  @apply md:w-full 
+}
+
+.navItems{
+  @apply md:bg-none md:hover:bg-transparent duration-150 active:bg-slate-900
+}
