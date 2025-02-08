@@ -3,6 +3,7 @@ import { useEffect, useRef } from 'react';
 
 function SplashCursor({
   // Add whatever props you like for customization
+  //Website Name - https://www.reactbits.dev/animations/splash-cursor
   SIM_RESOLUTION = 128,
   DYE_RESOLUTION = 1440,
   CAPTURE_RESOLUTION = 512,
@@ -1199,7 +1200,7 @@ function SplashCursor({
   ]);
 
   return (
-    <div className="fixed top-0 left-0 z-50 pointer-events-none w-full h-full">
+    <div className="fixed top-0 left-0 z-0 pointer-events-none w-full h-full">
       <canvas ref={canvasRef} id="fluid" className="w-screen h-screen block"></canvas>
     </div>
   );
