@@ -10,6 +10,7 @@ const Technologies = lazy(() => import('./components/Technologies'))
 const Footer = lazy(() => import('./components/Footer'))
 const Contact = lazy(() => import('./components/Contact'))
 const Projects = lazy(() => import('./components/Projects'))
+import SplashCursor from './components/minorComponents/SplashCursor'
 
 function App() {
 
@@ -27,7 +28,9 @@ function App() {
           planetsScale: 0
         }} />
       </div>
+      <SplashCursor />
       <Suspense fallback={<Loader />}>
+      
         <Header />
         <Home />
         <About />
