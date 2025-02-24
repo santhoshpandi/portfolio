@@ -21,7 +21,7 @@ export default function Contact() {
 
   return (
     <>
-      <form id="contact" onSubmit={sendData} className="my-5 duration-150 flex flex-col justify-center p-[20px] md:w-[50%] w-[90%] mx-auto hover:shadow-[0px_0px_4px_4px] rounded-md hover:shadow-green-400">
+      <form id="contact" onSubmit={sendData} className="my-5 duration-150 flex flex-col justify-center p-[20px] md:w-[50%] w-[90%] mx-auto hover:shadow-[0px_0px_4px_4px] rounded-md hover:shadow-green-400 relative z-10">
         <h1 className="text-purple-300 text-[25px] md:text-[35px] font-semibold mx-auto">Contact</h1>
         <span className="text-white">Name</span> <input onChange={handleChange} name="name" type="text" className="focus:outline-none caret-green-800 px-4 md:py-[8px] py-[5px] rounded-sm" required /> <br />
         <span className="text-white">Email</span> <input onChange={handleChange} name="email" type="email" id="" className="focus:outline-none caret-green-800 px-4 md:py-[8px] py-[5px] rounded-sm" required /> <br />

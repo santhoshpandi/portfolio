@@ -1,12 +1,12 @@
 export default [
-  // {
-  //   title:'FoodHub - Food Ordering App',
-  //   image:'/shopify.png',
-  //   description:'A modern responsive dashboard template includes a sliding navigation bar with different sections. It is designed to be a starting point for building customizable admin dashboards and other web applications.',
-  //   sourceCodeLink:'https://github.com/santhoshpandi/Datrix-Dashboard-React',
-  //   previewLink:'https://santhoshpandi.github.io/Datrix-Dashboard-React/',
-  //   technologies:['React','NodeJs','ExpressJs','Mongo']
-  // },
+  {
+    title:'FoodHub - Food Ordering App',
+    image:'/shopify.png',
+    description:'A modern responsive dashboard template includes a sliding navigation bar with different sections. It is designed to be a starting point for building customizable admin dashboards and other web applications.',
+    sourceCodeLink:'https://github.com/santhoshpandi/food-hub-mern',
+    // previewLink:'https://santhoshpandi.github.io/Datrix-Dashboard-React/',
+    technologies:['React','NodeJs','ExpressJs','MongoDB','Tailwind']
+  },
   {
     title:'Datrix - A Dashboard Template',
     image:'/datrix.png',

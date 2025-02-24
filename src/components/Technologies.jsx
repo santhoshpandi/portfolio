@@ -6,7 +6,7 @@ import { SiExpress,SiMongodb,SiVite} from "react-icons/si";
 
 export default function Technologies() {
   return (
-    <div id="skills" className="flex flex-col justify-center items-center py-6">
+    <div id="skills" className="flex flex-col justify-center items-center py-6 relative z-10">
     <h1 className="md:text-[35px] text-[25px] font-semibold text-orange-300  w-full text-center">Technologies</h1><br />
       
       <div className="text-white md:text-[70px] text-[50px] flex flex-wrap gap-8 md:w-[50%] w-[75%] justify-center">

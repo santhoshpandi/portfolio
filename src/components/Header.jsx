@@ -5,7 +5,7 @@ import { ImMenu } from "react-icons/im";
 export default function Header(){
   const [slideMenu,setSlideMenu] = useState(false)
   return(
-    <div className=" text-green-400 p-[18px] flex items-center justify-between text-[18px] backdrop-blur-md  sticky top-0 left-0 right-0 z-[10]	max-w-[81rem] mx-auto">
+    <div className=" text-green-400 p-[18px] flex items-center justify-between text-[18px] backdrop-blur-md  sticky top-0 left-0 right-0 z-50	max-w-[81rem] mx-auto">
       <div className="md:block hidden font-semibold">Santhosh🦊</div>
       <h1 className="md:hidden block  md:text-2xl text-xl font-extrabold text-green-400 font-typewriter">SP</h1>
 

@@ -2,7 +2,7 @@ import imgUrl from '../assets/illustrations/about2.png'
 
 export default function About() {
   return (
-    <div id='about' className='flex py-[30px] flex-col md:flex-row justify-evenly items-center bg-white bg-opacity-5'>
+    <div id='about' className='flex py-[30px] flex-col md:flex-row justify-evenly items-center bg-white bg-opacity-5 relative z-10'>
       <div className='md:w-1/2  text-white px-[20px]  leading-8'>
         <h1 className='text-2xl mb-2'>About Me</h1>
         <li>

@@ -2,7 +2,7 @@ import Typewriter from "typewriter-effect";
 
 export default function TypeWriter() {
 
-  const title = ['MERN-Stack Developer', 'Fresher', 'Web-Developer','Optimist'];
+  const title = ['MERN-Stack Developer', 'Fresher', 'Web-Developer','Optimist','Frontend Developer','Fullstack Developer'];
   return (
     <div className="text-green-500 text-[28px] md:text-[35px] font-typewriter mt-3">
 

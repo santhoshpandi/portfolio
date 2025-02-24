@@ -3,7 +3,7 @@ import TypeWriter from './minorComponents/TypeWriter'
 import Links from './minorComponents/Links'
 export default function Home(){
   return(
-    <div id='home' className='flex py-[30px] flex-col md:flex-row items-center justify-evenly'
+    <div id='home' className='flex py-[30px] flex-col md:flex-row items-center justify-evenly relative z-10'
    >
       <div className='md:w-[50%] md:pl-[45px] md:pr-0  px-[15px] text-white text-[30px] md:text-[40px] md:text-start text-center'>
         Hello ✋<br />

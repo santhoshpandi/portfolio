@@ -49,8 +49,12 @@ export default function ProjectTemplate({ project }) {
         <div className='flex gap-5 justify-center text-2xl'>
           <a href={sourceCodeLink}> <FaLaptopCode
             className='cursor-pointer hover:text-purple-300' /></a>
-          <a href={previewLink}> <IoEye
+          {
+            previewLink ?
+            <a href={previewLink}> <IoEye
             className='cursor-pointer hover:text-pink-300' /></a>
+            : <></>
+          }
         </div>
       </div>
 
