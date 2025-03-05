@@ -1,8 +1,8 @@
 export default [
   {
     title:'FoodHub - Food Ordering App',
-    image:'/shopify.png',
-    description:'A modern responsive dashboard template includes a sliding navigation bar with different sections. It is designed to be a starting point for building customizable admin dashboards and other web applications.',
+    image:'/food_hub.png',
+    description:'A full-stack web application built using the MERN stack (MongoDB, Express.js, React, Node.js) with JWT-based authentication. The app allows users to sign up, log in, view reviews, order food, view their orders, manage their profile, and log out.',
     sourceCodeLink:'https://github.com/santhoshpandi/food-hub-mern',
     // previewLink:'https://santhoshpandi.github.io/Datrix-Dashboard-React/',
     technologies:['React','NodeJs','ExpressJs','MongoDB','Tailwind']
