@@ -17,6 +17,7 @@ function App() {
 
   return (
     <>
+      {/* <SplashCursor /> */}
       <div className='fixed top-0 left-0 right-0 bottom-0 z-[-1]'>
         <ReactNebula config={{
           starsCount: 100,
@@ -28,9 +29,8 @@ function App() {
           planetsScale: 0
         }} />
       </div>
-      <SplashCursor />
       <Suspense fallback={<Loader />}>
-      
+
         <Header />
         <Home />
         <About />

@@ -11,5 +11,13 @@ body{
   @apply m-0 font-poppins
 }
 
+.ctr {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+.ctr::-webkit-scrollbar { 
+  display: none;  /* Safari and Chrome */
+}
+
 
 
