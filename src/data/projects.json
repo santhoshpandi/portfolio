@@ -15,6 +15,13 @@
     "technologies":["React","TailWind","Vite"]
   },
   {
+    "title":"Broad Store - Stripe Payment",
+    "image":"/broad_store_stripe.png",
+    "description":"This application is a MERN stack project (MongoDB, Express, React, Node.js) integrated with Stripe for handling payments. It's designed to enable users to complete transactions securely through Stripe's payment gateway.",
+    "sourceCodeLink":"https://github.com/santhoshpandi/broad-store-stripe",
+    "technologies":["React","Stripe","NodeJs","ExpressJs","MongoDB"]
+  },
+  {
     "title":"Shopify - ECommerce Website",
     "image":"/shopify.png",
     "description":"A simple e-commerce responsive website built for both MOBILE and PC, that allows users to browse products, add them to the cart, and place orders. The website is designed with a focus on user experience.",
