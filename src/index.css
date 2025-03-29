@@ -19,5 +19,23 @@ body{
   display: none;  /* Safari and Chrome */
 }
 
+/* Custom Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
 
+::-webkit-scrollbar-track {
+  background: #000000;
+}
 
+::-webkit-scrollbar-thumb {
+  background-color: #34d399; /* Tailwind Green Color */
+  border-radius: 2px;  
+}
+
+/* Firefox */
+/* Custom scrollbar for Firefox workaround (if deeper customization is needed) */
+* {
+  scrollbar-width: thin;  /* Thin scrollbar in Firefox */
+  scrollbar-color: #34d399 #000000;  /* Thumb and Track color for Firefox */
+}
