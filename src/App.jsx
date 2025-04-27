@@ -10,6 +10,7 @@ const Technologies = lazy(() => import('./components/Technologies'))
 const Footer = lazy(() => import('./components/Footer'))
 const Contact = lazy(() => import('./components/Contact'))
 const Projects = lazy(() => import('./components/Projects'))
+const Certification = lazy(() => import('./components/Certification'))
 import SplashCursor from './components/minorComponents/SplashCursor'
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
         <Header />
         <Home />
         <About />
+        <Certification />
         <Technologies />
         <Projects />
         <Contact />

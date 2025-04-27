@@ -1,5 +1,7 @@
 import { useState } from "react"
 import Links from "./minorComponents/Links"
+import data from "../data/data.json"
+
 export default function Contact() {
 
   const [formData, setFormData] = useState({})
@@ -14,7 +16,7 @@ export default function Contact() {
   function sendData(e) {
     e.preventDefault()
     var formattedBody = `Name: ${formData.name} \nEmail: ${formData.email} \nComment: ${formData.comment}`;
-    var mailToLink = "mailto:santhoshpandi543@gmail.com?subject=Message From Portfolio👋&body=" + encodeURIComponent(formattedBody);
+    var mailToLink = "mailto:"+data.email+"?subject=Message From Portfolio👋&body=" + encodeURIComponent(formattedBody);
     window.location.href = mailToLink;
   }
 
@@ -33,7 +35,7 @@ export default function Contact() {
             </p>
             <div className="space-y-2 relative z-10">
               <div className="flex items-center gap-4 text-xl">
-                <p className="mb-4">santhoshpandi543@gmail.com</p>
+                <p className="mb-4">{data.email}</p>
               </div>
               <ul className="flex gap-4 text-[30px] mt-1">
                 <Links />

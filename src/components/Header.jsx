@@ -24,7 +24,7 @@ export default function Header(){
         <li
          className="relative navItems group cursor-pointer px-[18px] py-3 md:p-2"><a href="#about">About</a>
         </li>
-        <li className="relative navItems group cursor-pointer px-[18px] py-3 md:p-2"><a href="#skills">Skills</a></li>
+        <li className="relative navItems group cursor-pointer px-[18px] py-3 md:p-2"><a href="#certification">Certifications</a></li>
         <li className="relative navItems group cursor-pointer px-[18px] py-3 md:p-2"><a href="#projects">Projects</a></li>       
         <li className="relative navItems group cursor-pointer px-[18px] py-3 md:p-2"><a href="#contact">Contact</a></li>
       </ul>
