@@ -5,7 +5,7 @@ export default function Home(){
   return(
     <div id='home' className='flex py-[30px] flex-col md:flex-row items-center justify-evenly relative z-10'
    >
-      <div className='md:w-[50%] md:pl-[45px] md:pr-0  px-[15px] text-white text-[30px] md:text-[40px] md:text-start text-center'>
+      <div className='md:w-[50%] md:pl-[55px] md:pr-0 px-[15px] text-white text-[30px] md:text-[40px] md:text-start text-center'>
         Hello ✋<br />
         I'm <span className='text-purple-400 md:text-[50px] text-[40px]'>Santhosh Pandi</span>
          <TypeWriter />

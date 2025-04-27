@@ -21,7 +21,7 @@ export default function Contact() {
 
   return (
     <>
-      <section id="contact" className="py-20 md:px-10 px-5 bg-[#1a202c45] text-[#fefcbf]">
+      <section id="contact" className="py-10 md:px-10 px-5 bg-[#1a202c45] text-[#fefcbf]">
         <h2 className="text-3xl font-bold text-[#15fa80] mb-4">Get In Touch</h2>
         <hr className="border-t border-[#bffecd] mb-8" />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
