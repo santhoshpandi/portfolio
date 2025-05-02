@@ -1,5 +1,5 @@
 {
-  "name": "Santhosh Pandi K",
+  "name": "Santhosh Pandi",
   "email": "santhoshpandi543@gmail.com",
   "roles": [
     "MERN-Stack Developer",
@@ -46,6 +46,7 @@
       "name":"Data Strucutures and Algorithms using Java",
       "image":"/dsa.jpg",
       "institution":"NPTEL",
+      "id":"",
       "year":"2022",
       "link":"https://drive.google.com/file/d/15CtzAzhs5TUfPI24_zjoboMblJPMbfeP/view?usp=drive_link",
       "description":"The Data Structures and Algorithms certification from NPTEL demonstrates proficiency in data structures, algorithms, and their applications in problem-solving."

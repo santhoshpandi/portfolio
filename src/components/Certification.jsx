@@ -1,5 +1,6 @@
 import data from '../data/data.json'
 import { TbExternalLink } from "react-icons/tb";
+import '../App.css'
 
 export default function Certification() {
   return (
@@ -10,7 +11,7 @@ export default function Certification() {
       <div className="space-y-6 grid grid-cols-1 md:grid-cols-2 gap-6">
         {
           data.certifications.map((cert, index) => (
-            <div key={index} className="relative p-5 bg-[#24272e8e] rounded-lg border border-[#00ff7f]/30 flex flex-col md:flex-row items-center gap-4 h-full">
+            <div key={index} className="relative p-5 bg-[#24272e8e] rounded-lg border border-[#00ff7f]/30 flex flex-col md:flex-row items-center gap-4 h-full card-fire-border">
               {
                 cert.image &&
                 <img

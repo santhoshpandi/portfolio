@@ -41,7 +41,7 @@ function App() {
         }} />
       </div>
       <Suspense fallback={<Loader />}>
-        <audio id='audio' src="/portfolio/assets/audio.mp3" muted autoPlay loop />
+        {/* <audio id='audio' src="/portfolio/assets/audio.mp3" muted autoPlay loop /> */}
         <Header />
         <Home />
         <About />
