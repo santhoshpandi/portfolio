@@ -1,16 +1,22 @@
 import data from '../data/data.json'
 import { TbExternalLink } from "react-icons/tb";
+import { motion } from 'framer-motion';
 
 export default function Certification() {
   return (
-    <section id="certification" className="py-16 px-8 bg-[#0d0f1a] text-[#d4f1f4]">
+    <section id="certification" className="py-16 px-8 overflow-x-hidden bg-[#0d0f1a] text-[#d4f1f4]">
       <h2 className="text-3xl md:text-4xl font-bold text-[#00ff7f] mb-8 py-2 text-center">
-        🗃 Certification
+        🗃 Certifications
       </h2>
       <div className="space-y-6 grid grid-cols-1 md:grid-cols-2 gap-6">
         {
           data.certifications.map((cert, index) => (
-            <div data-aos="zoom-in-up" key={index} className="relative p-5 bg-[#24272e8e] rounded-lg border border-[#00ff7f]/30 flex flex-col md:flex-row items-center gap-4 h-full ">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8, y: 40 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              viewport={{ once: true, amount: 0.3 }}
+              key={index} className="relative p-5 bg-[#24272e8e] rounded-lg border border-[#00ff7f]/30 flex flex-col md:flex-row items-center gap-4 h-full ">
               {
                 cert.image &&
                 <img
@@ -45,7 +51,7 @@ export default function Certification() {
                   {cert.description}
                 </p>
               </div>
-            </div>
+            </motion.div>
           ))
         }
       </div>

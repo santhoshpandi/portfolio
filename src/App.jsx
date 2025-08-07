@@ -1,7 +1,6 @@
 import { ReactNebula } from "@flodlc/nebula";
 import { Suspense, lazy, useEffect } from 'react'
 import Loader from './components/minorComponents/Loader';
-import AOS from "aos";
 
 const Header = lazy(() => import('./components/Header'))
 const Home = lazy(() => import('./components/Home'))
@@ -14,18 +13,9 @@ const Certification = lazy(() => import('./components/Certification'))
 
 function App() {
 
-  useEffect(() => {
-    AOS.init({
-      duration: 800,
-      once: true,
-    });
-  }, []);
-
-
   return (
-    <>
-      {/* <SplashCursor /> */}
-      <div className='fixed top-0 left-0 right-0 bottom-0 z-[-1]'>
+    <div>
+      <div className='fixed top-0 left-0 right-0 bottom-0 z-[-1] overflow-x-hidden'>
         <ReactNebula config={{
           starsCount: 100,
           starsRotationSpeed: 1,
@@ -46,7 +36,7 @@ function App() {
         <Contact />
         <Footer />
       </Suspense>
-    </>
+    </div>
   )
 }
 

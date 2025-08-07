@@ -1,6 +1,7 @@
 import { useState } from "react"
 import Links from "./minorComponents/Links"
 import data from "../data/data.json"
+import { motion } from "framer-motion"
 
 export default function Contact() {
 
@@ -16,18 +17,22 @@ export default function Contact() {
   function sendData(e) {
     e.preventDefault()
     var formattedBody = `Name: ${formData.name} \nEmail: ${formData.email} \nComment: ${formData.comment}`;
-    var mailToLink = "mailto:"+data.email+"?subject=Message From Portfolio👋&body=" + encodeURIComponent(formattedBody);
+    var mailToLink = "mailto:" + data.email + "?subject=Message From Portfolio👋&body=" + encodeURIComponent(formattedBody);
     window.location.href = mailToLink;
   }
 
 
   return (
     <>
-      <section id="contact" className="py-10 md:px-10 px-5 bg-[#1a202c45] text-[#fefcbf]">
+      <section id="contact" className="py-10 md:px-10 px-5 overflow-x-hidden bg-[#1a202c45] text-[#fefcbf]">
         <h2 className="text-3xl py-2 font-bold text-[#15fa80] mb-4">💌 Get In Touch</h2>
         <hr className="border-t border-[#bffecd] mb-8" />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-          <div data-aos="fade-right">
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.3 }}>
             <p className="text-lg text-[#15fa30] mb-4">Let's Connect</p>
             <h3 className="text-4xl py-2 font-bold mb-4">Have a project in mind?</h3>
             <p className="text-[#e2e8f0] text-lg mb-6">
@@ -41,9 +46,12 @@ export default function Contact() {
                 <Links />
               </ul>
             </div>
-          </div>
-          <form
-            data-aos="fade-left"
+          </motion.div>
+          <motion.form
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.3 }}
             onSubmit={sendData}
             className="bg-[#2d3748] md:p-8 p-2 py-3 rounded-lg border border-[#209d20] relative z-10"
           >
@@ -86,7 +94,7 @@ export default function Contact() {
             >
               Send Message
             </button>
-          </form>
+          </motion.form>
         </div>
       </section>
     </>

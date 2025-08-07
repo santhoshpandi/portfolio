@@ -2,23 +2,23 @@
 
 @import "tailwindcss";
 
-/* --------- Animate on Scroll css --------- */
-@import "aos/dist/aos.css";
 
 @theme {
   --font-mono: "Intel One Mono", monospace;
 }
 
 *{
-  @apply scroll-smooth  scroll-pt-[75px]
-}
-
-*{
   font-family: var(--font-mono);
 }
 
+
+html{
+  @apply scroll-smooth  scroll-pt-[50px]
+}
+
+
 body{
-  @apply m-0 overflow-x-hidden w-screen
+  @apply m-0 w-screen overflow-x-hidden
 }
 
 
@@ -62,11 +62,6 @@ body{
   }
 }
 
-
-
-.card-fire-border {
-  animation: rainbowFireEffect 8s infinite alternate;
-}
  /* --------- Header Ends --------- */
 
 .ctr {

@@ -11,12 +11,17 @@ export default function Technologies() {
   };
 
   return (
-    <div className="bg-gradient-to-b from-black via-[#0b0f1a] to-black text-white  py-16 px-6 font-mono space-y-6">
+    <div className="bg-gradient-to-b from-black via-[#0b0f1a] to-black text-white  py-16 px-6 font-mono space-y-6 overflow-x-hidden">
       <h1 className="text-3xl md:text-4xl font-bold text-center text-green-400 py-2">
-        👨‍🚀 My Tech Universe
+        👨‍🚀 My Tech Skills
       </h1>
 
-      <div data-aos="flip-down" className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-12 max-w-7xl mx-auto">
+      <motion.div
+        initial={{ opacity: 0, rotateX: 90 }}
+        whileInView={{ opacity: 1, rotateX: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.3 }}
+        className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-12 max-w-7xl mx-auto">
         {technologies.map((section, i) => (
           <div
             key={i}
@@ -40,7 +45,7 @@ export default function Technologies() {
 
           </div>
         ))}
-      </div>
+      </motion.div>
     </div>
   )
 }
