@@ -24,12 +24,12 @@ export default function Contact() {
   return (
     <>
       <section id="contact" className="py-10 md:px-10 px-5 bg-[#1a202c45] text-[#fefcbf]">
-        <h2 className="text-3xl font-bold text-[#15fa80] mb-4">Get In Touch</h2>
+        <h2 className="text-3xl py-2 font-bold text-[#15fa80] mb-4">💌 Get In Touch</h2>
         <hr className="border-t border-[#bffecd] mb-8" />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-          <div>
+          <div data-aos="fade-right">
             <p className="text-lg text-[#15fa30] mb-4">Let's Connect</p>
-            <h3 className="text-4xl font-bold mb-4">Have a project in mind?</h3>
+            <h3 className="text-4xl py-2 font-bold mb-4">Have a project in mind?</h3>
             <p className="text-[#e2e8f0] text-lg mb-6">
               I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
             </p>
@@ -43,6 +43,7 @@ export default function Contact() {
             </div>
           </div>
           <form
+            data-aos="fade-left"
             onSubmit={sendData}
             className="bg-[#2d3748] md:p-8 p-2 py-3 rounded-lg border border-[#209d20] relative z-10"
           >

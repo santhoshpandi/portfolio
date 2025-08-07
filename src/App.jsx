@@ -1,7 +1,7 @@
-import './App.css'
 import { ReactNebula } from "@flodlc/nebula";
-import { Suspense, lazy } from 'react'
+import { Suspense, lazy, useEffect } from 'react'
 import Loader from './components/minorComponents/Loader';
+import AOS from "aos";
 
 const Header = lazy(() => import('./components/Header'))
 const Home = lazy(() => import('./components/Home'))
@@ -11,9 +11,15 @@ const Footer = lazy(() => import('./components/Footer'))
 const Contact = lazy(() => import('./components/Contact'))
 const Projects = lazy(() => import('./components/Projects'))
 const Certification = lazy(() => import('./components/Certification'))
-import SplashCursor from './components/animations/SplashCursor'
 
 function App() {
+
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: true,
+    });
+  }, []);
 
 
   return (

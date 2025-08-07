@@ -15,7 +15,7 @@ export default function ProjectTemplate({ project }) {
     <div
       onMouseEnter={() => setSlideUp(true)}
       onMouseLeave={() => setSlideUp(false)}
-      className="relative z-[0] duration-150   flex flex-col justify-center  rounded-lg hover:shadow-[0px_0px_4px_4px] hover:shadow-green-500 md:w-auto ">
+      className="relative z-[0] flex flex-col justify-center  rounded-lg hover:shadow-[0px_0px_4px_4px] hover:shadow-green-500 md:w-auto ">
 
       {/* --------  Image --------- */}
       <img className='rounded-t-lg  md:h-[250px] w-full ' src={imgUrl} alt="image" />
@@ -24,7 +24,7 @@ export default function ProjectTemplate({ project }) {
 
       <div className={`
       ${slideUp ? 'md:h-[250px] h-full' : 'h-0 overflow-hidden'}
-       absolute top-0 duration-150 bg-slate-900 bg-opacity-95 text-white text-[15px] flex flex-col justify-center items-center rounded-t-lg px-2`}>
+       absolute top-0 duration-300 bg-slate-900 bg-opacity-95 text-white text-[15px] overflow-y-hidden flex flex-col justify-center items-center rounded-t-lg px-2`}>
         <h1 className='m-2'>
           {description}
         </h1>
