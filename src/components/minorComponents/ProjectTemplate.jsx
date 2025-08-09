@@ -15,7 +15,7 @@ export default function ProjectTemplate({ project }) {
     <div
       onMouseEnter={() => setSlideUp(true)}
       onMouseLeave={() => setSlideUp(false)}
-      className="relative z-[0] flex flex-col justify-center  rounded-lg hover:shadow-[0px_0px_4px_4px] hover:shadow-green-500 md:w-auto ">
+      className="relative z-[0] flex flex-col justify-center  rounded-lg hover:shadow-[0px_0px_4px_4px] hover:shadow-green-500 md:w-auto hover:scale-105 duration-150 cursor-grab">
 
       {/* --------  Image --------- */}
       <img className='rounded-t-lg  md:h-[250px] w-full ' src={imgUrl} alt="image" />
@@ -41,7 +41,7 @@ export default function ProjectTemplate({ project }) {
       {/* --------  hover part ends☝ --------- */}
 
       <div className='bg-green-800 text-white px-3  py-2 flex justify-between items-center gap-1.5 rounded-b-lg'>
-        <h1 className='font-semibold text-center '>{title}</h1>        
+        <h1 className='font-semibold text-center md:text-base text-sm  '>{title}</h1>        
 
         {/* --------  Links --------- */}
         <div className='flex gap-5 justify-center text-2xl'>

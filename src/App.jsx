@@ -14,7 +14,7 @@ const Certification = lazy(() => import('./components/Certification'))
 function App() {
 
   return (
-    <div>
+    <div className="mx-auto max-w-[100rem]">
       <div className='fixed top-0 left-0 right-0 bottom-0 z-[-1] overflow-x-hidden'>
         <ReactNebula config={{
           starsCount: 100,

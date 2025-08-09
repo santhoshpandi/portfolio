@@ -1,10 +1,34 @@
-import imgUrl from '../assets/illustrations/home1.png'
 import TypeWriter from './minorComponents/TypeWriter'
 import Links from './minorComponents/Links'
 import data from '../data/data.json'
 import { motion } from 'framer-motion'
+import { useState, useEffect } from 'react'
+
+import image1 from '../assets/illustrations/space_cute_images/image1.jpg'
+import image2 from '../assets/illustrations/space_cute_images/image2.jpg'
+import image3 from '../assets/illustrations/space_cute_images/image3.jpg'
+import image4 from '../assets/illustrations/space_cute_images/image4.jpg'
+import image5 from '../assets/illustrations/space_cute_images/image5.jpg'
+import image6 from '../assets/illustrations/space_cute_images/image6.jpg'
+import image7 from '../assets/illustrations/space_cute_images/image7.jpg'
+import image8 from '../assets/illustrations/space_cute_images/image8.jpg'
+
+const images = [image1, image2, image3, image4, image5, image6, image7, image8];
 
 export default function Home() {
+
+  const [currentImage, setCurrentImage] = useState(
+    images[Math.floor(Math.random() * images.length)]
+  );
+
+   useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage(images[Math.floor(Math.random() * images.length)]);
+    }, 3000); // change every 3 seconds
+
+    return () => clearInterval(interval); // cleanup when unmounted
+  }, []);
+
   const float = {
     y: [0, -15, 0],
     transition: { duration: 2.5, repeat: Infinity, ease: "easeInOut" },
@@ -28,14 +52,18 @@ export default function Home() {
         </ul>
       </motion.div>
 
-      <motion.div
+      <motion.div        
         animate={float}
-        className='md:w-[50%] md:block hidden mt-2 w-[45%]'>
+        className="md:w-[50%] md:block hidden mt-2 overflow-hidden p-2"
+      >
         <img
-          className='w-full h-full'
-          src={imgUrl} alt="illlustration"
+          className="w-[350px] mx-auto object-contain rounded-tr-[10px]
+           rounded-tl-[150px] rounded-bl-[10px] rounded-br-[150px] duration-150"
+          src={currentImage}
+          alt="illustration"
         />
       </motion.div>
+
     </div>
   )
 }

@@ -36,12 +36,16 @@ export default function Technologies() {
                 <motion.div
                   key={j}
                   animate={float}
-                  className="bg-[#0f172a] text-green-300 border border-green-600 rounded-md px-3 py-2 text-center text-sm md:text-base flex items-center"
+                  className="bg-[#0f172a] text-green-300 border border-green-600 
+                 rounded-md px-3 py-2 text-center text-sm md:text-base 
+                 flex items-center justify-center 
+                 whitespace-normal break-words"
                 >
                   {tech}
                 </motion.div>
               ))}
             </div>
+
 
           </div>
         ))}

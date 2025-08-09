@@ -3,6 +3,7 @@
 @import "tailwindcss";
 
 
+
 @theme {
   --font-mono: "Intel One Mono", monospace;
 }
@@ -20,6 +21,31 @@ html{
 body{
   @apply m-0 w-screen overflow-x-hidden
 }
+
+ /* Card slider effects starts */
+.slick-slide > div {
+  margin: 10px 10px; /* gap between slides */
+}
+
+
+/* Override slick dots */
+.slick-dots li button:before {
+  color: #22c55e !important; /* Tailwind's green-500 */
+  opacity: 0.7;
+}
+.slick-dots li.slick-active button:before {
+  color: #22c55e !important;
+  opacity: 1;
+}
+
+/* Override slick arrows */
+.slick-prev:before,
+.slick-next:before {
+  color: #22c55e !important; /* Tailwind green-500 */
+  font-size: 30px; /* bigger arrows if you want */
+}
+
+/* Card slider effects ends */
 
 
 
