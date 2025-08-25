@@ -16,15 +16,17 @@ export default function Technologies() {
         👨‍🚀 My Tech Skills
       </h1>
 
-      <motion.div
-        initial={{ opacity: 0, rotateX: 90 }}
-        whileInView={{ opacity: 1, rotateX: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        viewport={{ once: true, amount: 0.3 }}
+      <div
         className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-12 max-w-7xl mx-auto">
         {technologies.map((section, i) => (
-          <div
+          <motion.div
             key={i}
+
+            initial={{ opacity: 0, rotateX: 90 }}
+            whileInView={{ opacity: 1, rotateX: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.3 }}
+
             className=" border border-green-400 rounded-xl p-6 shadow-[0_0_10px_#00ff0060] hover:shadow-[0_0_20px_#00ff0090] transition-shadow"
           >
             <h2 className="text-xl font-bold text-green-400 mb-4 text-center">
@@ -47,9 +49,9 @@ export default function Technologies() {
             </div>
 
 
-          </div>
+          </motion.div>
         ))}
-      </motion.div>
+      </div>
     </div>
   )
 }
