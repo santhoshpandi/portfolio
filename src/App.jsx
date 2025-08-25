@@ -1,6 +1,6 @@
 import { ReactNebula } from "@flodlc/nebula";
 import { Suspense, lazy, useEffect } from 'react'
-import Loader from './components/minorComponents/Loader';
+import Loader from './components/animations/Loader';
 
 const Header = lazy(() => import('./components/Header'))
 const Home = lazy(() => import('./components/Home'))

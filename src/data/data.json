@@ -72,6 +72,18 @@
   ],
   "projects": [
     {
+      "title": "AIGen - Color Palette",
+      "image": "/ai_colorPalette_generator.png",
+      "description": "An AI-powered color palette generator built with React + Vite + Tailwind CSS, which uses the OpenRouter API to generate beautiful color schemes based on any scenario or theme you enter.",
+      "sourceCodeLink": "https://github.com/santhoshpandi/AI-ColorPalette-Generator",
+      "previewLink":"https://ai-color-palette-generator-wheat.vercel.app/",
+      "technologies": [
+        "React",
+        "Tailwind",
+        "OpenRouter API"
+      ]
+    },
+    {
       "title": "FoodHub - Food Ordering App",
       "image": "/food_hub.png",
       "description": "A full-stack web application built using the MERN stack with JWT-based authentication. The app allows users to sign up, log in, view reviews, order food, view their orders, manage their profile, and log out.",

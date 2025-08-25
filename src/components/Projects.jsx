@@ -1,4 +1,4 @@
-import ProjectTemplate from "./minorComponents/ProjectTemplate"
+import ProjectTemplate from "./template/ProjectTemplate"
 import data from "../data/data.json"
 import { motion } from "framer-motion"
 

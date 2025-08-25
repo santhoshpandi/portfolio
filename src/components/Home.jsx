@@ -1,5 +1,5 @@
-import TypeWriter from './minorComponents/TypeWriter'
-import Links from './minorComponents/Links'
+import TypeWriter from './animations/TypeWriter'
+import Links from './template/Links'
 import data from '../data/data.json'
 import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'

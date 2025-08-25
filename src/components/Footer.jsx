@@ -1,4 +1,4 @@
-import Links from "./minorComponents/Links";
+import Links from "./template/Links";
 import '../index.css'
 
 export default function Footer() {

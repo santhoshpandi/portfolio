@@ -1,5 +1,5 @@
 import { useState } from "react"
-import Links from "./minorComponents/Links"
+import Links from "./template/Links"
 import data from "../data/data.json"
 import { motion } from "framer-motion"
 
