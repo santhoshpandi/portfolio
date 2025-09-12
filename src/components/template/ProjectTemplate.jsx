@@ -29,7 +29,7 @@ export default function ProjectTemplate({ project }) {
           {description}
         </h1>
         {/* --------  Technologies --------- */}
-        <ul className='flex flex-wrap gap-1 justify-evenly items-center py-1'>
+        <ul className='flex flex-wrap gap-1 justify-evenly items-center py-1 mb-2'>
           {
             technologies.map((tech, index) => (
               <li key={index} className='bg-[#C4B454] text-black px-2  rounded-sm'>{tech}</li>
@@ -45,13 +45,15 @@ export default function ProjectTemplate({ project }) {
 
         {/* --------  Links --------- */}
         <div className='flex gap-5 justify-center text-2xl'>
-          <a target='_blank' href={sourceCodeLink}> <FaLaptopCode
-            className='cursor-pointer hover:text-purple-300' /></a>
           {
-            previewLink ?
+            sourceCodeLink &&
+            <a target='_blank' href={sourceCodeLink}> <FaLaptopCode
+            className='cursor-pointer hover:text-purple-300' /></a>
+          }
+          {
+            previewLink &&
             <a target='_blank' href={previewLink}> <IoEye
             className='cursor-pointer hover:text-pink-300' /></a>
-            : <></>
           }
         </div>
       </div>

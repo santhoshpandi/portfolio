@@ -72,6 +72,30 @@
   ],
   "projects": [
     {
+      "title": "WhisperWalls - A Social Whispering Platform",
+      "image": "",
+      "description": "A creative social platform where users share anonymous “whispers” filtered by mood and category. Implemented features like Category-based filtering, Personalized charts, surprise discovery tool, and user-only whisper walls.",
+      "previewLink":"https://whisper-walls-server.vercel.app",
+      "technologies": [
+        "React",
+        "Zustand",
+        "Node & Express",
+        "MongoDB"
+      ]
+    },
+    {
+      "title": "TidyMind - AI-powered mood planner",
+      "image": "/tidy_mind.png",
+      "description": "AI-powered mood planner ✍ that turns your emotions into action 🎭 using React, Gemini AI.",
+      "sourceCodeLink": "https://github.com/santhoshpandi/TidyMind",
+      "previewLink":"https://tidy-mind-tau.vercel.app/",
+      "technologies": [
+        "React",
+        "Tailwind",
+        "Gemini API"
+      ]
+    },
+    {
       "title": "AIGen - Color Palette",
       "image": "/ai_colorPalette_generator.png",
       "description": "An AI-powered color palette generator built with React + Vite + Tailwind CSS, which uses the OpenRouter API to generate beautiful color schemes based on any scenario or theme you enter.",
