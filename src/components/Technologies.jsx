@@ -11,7 +11,7 @@ export default function Technologies() {
   };
 
   return (
-    <div className="bg-gradient-to-b from-black via-[#0b0f1a] to-black text-white  py-16 px-6 font-mono space-y-6 overflow-x-hidden">
+    <div id="skills" className="bg-gradient-to-b from-black via-[#0b0f1a] to-black text-white  py-16 px-6 font-mono space-y-6 overflow-x-hidden">
       <h1 className="text-3xl md:text-4xl font-bold text-center text-green-400 py-2">
         👨‍🚀 My Tech Skills
       </h1>
