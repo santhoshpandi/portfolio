@@ -33,7 +33,7 @@ export default function Technologies() {
               {section.title}
             </h2>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 mt-4">
               {section.techs.map((tech, j) => (
                 <motion.div
                   key={j}
@@ -41,7 +41,7 @@ export default function Technologies() {
                   className="bg-[#0f172a] text-green-300 border border-green-600 
                  rounded-md px-3 py-2 text-center text-sm md:text-base 
                  flex items-center justify-center 
-                 whitespace-normal break-words"
+                 whitespace-normal line-clamp-3"
                 >
                   {tech}
                 </motion.div>
