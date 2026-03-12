@@ -47,9 +47,9 @@ export default function Certification() {
                 <p className="absolute top-0 right-0 bg-[#00ff7f]/10 text-[#00ff7f] text-sm px-2 py-1 rounded-tr-md border border-[#00ff7f]/50">
                   {cert.year}
                 </p>
-                <p className="text-[#fbffc1] hidden md:block">
+                {/* <p className="text-[#fbffc1] hidden md:block">
                   {cert.description}
-                </p>
+                </p> */}
               </div>
             </motion.div>
           ))

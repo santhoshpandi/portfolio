@@ -2,7 +2,20 @@ import { useState } from 'react';
 import { FaLaptopCode } from "react-icons/fa";
 import { IoEye } from "react-icons/io5";
 
-export default function ProjectTemplate({ project }) {
+interface Project {
+  title: string;
+  image: string;
+  description: string;
+  sourceCodeLink?: string;
+  previewLink?: string;
+  technologies: string[];
+}
+
+interface Props {
+  project: Project
+}
+
+export default function ProjectTemplate({ project }: Props) {
   const [slideUp, setSlideUp] = useState(false)
 
   //Destructuring Props
@@ -41,19 +54,19 @@ export default function ProjectTemplate({ project }) {
       {/* --------  hover part ends☝ --------- */}
 
       <div className='bg-green-800 text-white px-3  py-2 flex justify-between items-center gap-1.5 rounded-b-lg'>
-        <h1 className='font-semibold text-center md:text-base text-sm  '>{title}</h1>        
+        <h1 className='font-semibold text-center md:text-base text-sm  '>{title}</h1>
 
         {/* --------  Links --------- */}
         <div className='flex gap-5 justify-center text-2xl'>
           {
             sourceCodeLink &&
             <a target='_blank' href={sourceCodeLink}> <FaLaptopCode
-            className='cursor-pointer hover:text-purple-300' /></a>
+              className='cursor-pointer hover:text-purple-300' /></a>
           }
           {
             previewLink &&
             <a target='_blank' href={previewLink}> <IoEye
-            className='cursor-pointer hover:text-pink-300' /></a>
+              className='cursor-pointer hover:text-pink-300' /></a>
           }
         </div>
       </div>

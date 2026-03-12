@@ -1,22 +1,30 @@
-import { useState } from "react"
+import { useState, type ChangeEvent } from "react"
 import Links from "./template/Links"
 import data from "../data/data.json"
 import { motion } from "framer-motion"
 
+interface FormData{
+  name:string;
+  email:string;
+  message:string;
+}
+
 export default function Contact() {
 
-  const [formData, setFormData] = useState({})
+  const [formData, setFormData] = useState<FormData>({
+    name:'', email:'', message:''
+  })
 
-  function handleChange(e) {
+  function handleChange(e:ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     })
   }
 
-  function sendData(e) {
+  function sendData(e:React.SubmitEvent<HTMLFormElement>) {
     e.preventDefault()
-    var formattedBody = `Name: ${formData.name} \nEmail: ${formData.email} \nComment: ${formData.comment}`;
+    var formattedBody = `Name: ${formData.name} \nEmail: ${formData.email} \nComment: ${formData.message}`;
     var mailToLink = "mailto:" + data.email + "?subject=Message From Portfolio👋&body=" + encodeURIComponent(formattedBody);
     window.location.href = mailToLink;
   }
@@ -84,7 +92,7 @@ export default function Contact() {
                 onChange={handleChange}
                 value={formData.message}
                 className="w-full p-3 bg-[#1a202c] border border-[#209d20] rounded-md text-[#fefcbf] focus:outline-none focus:ring-2 focus:ring-[#15fa47]"
-                rows="5"
+                rows={5}
                 required
               ></textarea>
             </div>

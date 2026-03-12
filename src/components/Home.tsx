@@ -21,19 +21,14 @@ export default function Home() {
     images[Math.floor(Math.random() * images.length)]
   );
 
-   useEffect(() => {
+  useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImage(images[Math.floor(Math.random() * images.length)]);
     }, 3000); // change every 3 seconds
 
     return () => clearInterval(interval); // cleanup when unmounted
   }, []);
-
-  const float = {
-    y: [0, -15, 0],
-    transition: { duration: 2.5, repeat: Infinity, ease: "easeInOut" },
-  };
-
+  
   return (
     <div id='home' className='flex py-[30px] overflow-x-hidden flex-col md:flex-row items-center justify-evenly relative z-10'
     >
@@ -52,8 +47,11 @@ export default function Home() {
         </ul>
       </motion.div>
 
-      <motion.div        
-        animate={float}
+      <motion.div
+        animate={{
+          y: [0, -15, 0],
+          transition: { duration: 2.5, repeat: Infinity, ease: "easeInOut" },
+        }}
         className="md:w-[50%] md:block hidden mt-2 overflow-hidden p-2"
       >
         <img
