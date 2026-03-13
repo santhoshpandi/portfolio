@@ -17,6 +17,8 @@ const images = [image1, image2, image3, image4, image5, image6, image7, image8];
 
 export default function Home() {
 
+  const { name } = data
+
   const [currentImage, setCurrentImage] = useState(
     images[Math.floor(Math.random() * images.length)]
   );
@@ -28,9 +30,9 @@ export default function Home() {
 
     return () => clearInterval(interval); // cleanup when unmounted
   }, []);
-  
+
   return (
-    <div id='home' className='flex py-[30px] overflow-x-hidden flex-col md:flex-row items-center justify-evenly relative z-10'
+    <section id='home' className='flex py-[30px] overflow-x-hidden flex-col md:flex-row items-center justify-evenly relative z-10'
     >
       <motion.div
         initial={{ opacity: 0, scale: 0.8, y: 40 }}
@@ -40,7 +42,7 @@ export default function Home() {
 
         className='md:w-[50%] md:pl-[55px] md:pr-0 px-[15px] text-white text-[30px] md:text-[40px] md:text-start text-center'>
         Hello ✋<br />
-        I'm <span className='text-purple-400 md:text-[50px] text-[40px]'>{data.name}</span>
+        I'm <span className='text-purple-400 md:text-[50px] text-[40px]'>{name}</span>
         <TypeWriter />
         <ul className='flex md:justify-normal justify-center gap-4 text-[30px] mt-3'>
           <Links />
@@ -62,6 +64,6 @@ export default function Home() {
         />
       </motion.div>
 
-    </div>
+    </section>
   )
 }

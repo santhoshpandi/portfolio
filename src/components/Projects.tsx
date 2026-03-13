@@ -7,6 +7,8 @@ import 'react-multi-carousel/lib/styles.css';
 
 export default function Projects() {
 
+  const { projects } = data
+
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
@@ -28,7 +30,7 @@ export default function Projects() {
   };
 
   return (
-    <div id="projects" className="w-full max-w-6xl mx-auto py-10 ">
+    <section id="projects" className="w-full max-w-6xl mx-auto py-10 ">
       <h1 className="text-green-400 text-center text-3xl md:text-4xl font-semibold  bg-opacity-5 w-full relative z-10 py-2">📽 Projects</h1>
       <motion.div
         initial={{ opacity: 0, rotateX: -90 }}
@@ -45,10 +47,10 @@ export default function Projects() {
           autoPlaySpeed={3000}
           infinite
           responsive={responsive}
-          itemClass="p-3"          
+          itemClass="p-3"
           containerClass="pb-6"
           className="md:px-6 px-4 my-auto rounded-lg ">
-          {data.projects.map((project, index) => (
+          {projects.map((project, index) => (
             <div key={index}>
               <ProjectTemplate project={project} />
             </div>
@@ -56,6 +58,6 @@ export default function Projects() {
           }
         </Carousel>
       </motion.div>
-    </div>
+    </section>
   )
 }

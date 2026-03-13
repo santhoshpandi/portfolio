@@ -3,29 +3,31 @@ import Links from "./template/Links"
 import data from "../data/data.json"
 import { motion } from "framer-motion"
 
-interface FormData{
-  name:string;
-  email:string;
-  message:string;
+interface FormData {
+  name: string;
+  email: string;
+  message: string;
 }
 
 export default function Contact() {
 
+  const { email } = data
+
   const [formData, setFormData] = useState<FormData>({
-    name:'', email:'', message:''
+    name: '', email: '', message: ''
   })
 
-  function handleChange(e:ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) {
+  function handleChange(e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     })
   }
 
-  function sendData(e:React.SubmitEvent<HTMLFormElement>) {
+  function sendData(e: React.SubmitEvent<HTMLFormElement>) {
     e.preventDefault()
     var formattedBody = `Name: ${formData.name} \nEmail: ${formData.email} \nComment: ${formData.message}`;
-    var mailToLink = "mailto:" + data.email + "?subject=Message From Portfolio👋&body=" + encodeURIComponent(formattedBody);
+    var mailToLink = "mailto:" + email + "?subject=Message From Portfolio👋&body=" + encodeURIComponent(formattedBody);
     window.location.href = mailToLink;
   }
 
@@ -48,7 +50,7 @@ export default function Contact() {
             </p>
             <div className="space-y-2 relative z-10">
               <div className="flex items-center gap-4 text-xl">
-                <p className="mb-4">{data.email}</p>
+                <p className="mb-4">{email}</p>
               </div>
               <ul className="flex gap-4 text-[30px] mt-1">
                 <Links />

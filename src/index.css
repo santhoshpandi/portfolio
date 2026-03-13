@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Intel+One+Mono:ital,wght@0,300..700;1,300..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 
 @theme {
@@ -23,6 +24,12 @@ body{
 
 
 /* ---------------- Header ----------------*/
+.navItems {
+  position: relative;
+  @apply md:bg-none md:hover:bg-transparent duration-150 active:bg-slate-900;
+}
+
+/* underline base */
 .navItems::after {
   content: '';
   position: absolute;
@@ -30,17 +37,14 @@ body{
   left: 0;
   width: 0;
   height: 3px;
-  background-color: #41f930; 
-  transition: width 0.250s ease-in-out; 
+  background-color: #41f930;
+  transition: width 0.25s ease-in-out;
   border-radius: 15px;
 }
 
-.navItems:hover::after {
-  @apply md:w-full 
-}
-
-.navItems{
-  @apply md:bg-none md:hover:bg-transparent duration-150 active:bg-slate-900
+/* active section underline (scroll highlight) */
+.activeNav::after {
+  width: 100%;
 }
  /* --------- Header Ends --------- */
 

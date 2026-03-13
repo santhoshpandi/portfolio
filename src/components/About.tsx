@@ -7,7 +7,7 @@ export default function About() {
   const { about } = data;
 
   return (
-    <motion.div
+    <motion.section
       initial={{ opacity: 0, scale: 1.2, y: 40 }}
       whileInView={{ opacity: 1, scale: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
@@ -27,6 +27,6 @@ export default function About() {
           src={imgUrl} alt="illlustration"
         />
       </div>
-    </motion.div>
+    </motion.section>
   )
 }
