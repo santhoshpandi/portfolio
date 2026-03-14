@@ -13,7 +13,7 @@ export default function ProjectCard({ project }: Props) {
 
   const navigate = useNavigate();
 
-  const { id, title, image, description, sourceCodeLink, previewLink, technologies, completedAt } = project;
+  const { id, title, image, sourceCodeLink, previewLink, technologies, completedAt } = project;
 
   let imgUrl = (image && image !== '')
     ? "/portfolio/assets/project_images/" + image
