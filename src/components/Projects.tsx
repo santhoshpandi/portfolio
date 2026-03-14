@@ -1,63 +1,53 @@
-import ProjectTemplate from "./template/ProjectTemplate"
 import data from "../data/data.json"
 import { motion } from "framer-motion"
-
-import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
+import { Link } from "react-router"
+import ProjectCard from "./template/ProjectCard"
+import type { Project } from "../data/data.type"
 
 export default function Projects() {
 
-  const { projects } = data
+  const { projects } = data as { projects: Project[] };
 
-  const responsive = {
-    superLargeDesktop: {
-      // the naming can be any, depends on you.
-      breakpoint: { max: 4000, min: 3000 },
-      items: 5
-    },
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 3
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 2
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1
-    }
-  };
+  const sortedProjects = [...projects].sort((a, b) => {
+    const dateDiff =
+      (new Date(b.completedAt ?? 0).getTime()) -
+      (new Date(a.completedAt ?? 0).getTime());
+
+    return dateDiff !== 0 ? dateDiff : b.id - a.id;
+  });
 
   return (
-    <section id="projects" className="w-full max-w-6xl mx-auto py-10 ">
-      <h1 className="text-green-400 text-center text-3xl md:text-4xl font-semibold  bg-opacity-5 w-full relative z-10 py-2">📽 Projects</h1>
-      <motion.div
-        initial={{ opacity: 0, rotateX: -90 }}
-        whileInView={{ opacity: 1, rotateX: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        viewport={{ once: true, amount: 0.3 }}
-        className="p-5 max-h-[800px] ctr">
+    <section id="projects" className="w-full max-w-6xl mx-auto py-10">
 
-        <Carousel
-          swipeable
-          draggable
-          showDots
-          autoPlay
-          autoPlaySpeed={3000}
-          infinite
-          responsive={responsive}
-          itemClass="p-3"
-          containerClass="pb-6"
-          className="md:px-6 px-4 my-auto rounded-lg ">
-          {projects.map((project, index) => (
-            <div key={index}>
-              <ProjectTemplate project={project} />
-            </div>
-          ))
-          }
-        </Carousel>
+      <h1 className="text-green-400 text-center text-3xl md:text-4xl font-semibold py-2">
+        📽 Projects
+      </h1>
+
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="grid md:grid-cols-3 gap-6 p-5 items-center"
+      >
+        {sortedProjects.slice(0,5).map((project) => (
+          <ProjectCard key={project.id} project={project} />
+        ))}
+
+        {projects.length > 5 && (
+          <div className="text-center  mt-4">
+            <Link
+              to="/projects#"
+              className="px-5 py-2 border animate-pulse border-green-400  rounded bg-green-400 text-black transition shadow-xl shadow-green-300"
+            >
+              View More Projects →
+            </Link>
+          </div>
+        )}
       </motion.div>
+
+
+
     </section>
   )
 }

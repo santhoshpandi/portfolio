@@ -15,7 +15,7 @@ import image8 from '../assets/illustrations/space_cute_images/image8.jpg'
 
 const images = [image1, image2, image3, image4, image5, image6, image7, image8];
 
-export default function Home() {
+export default function Hero() {
 
   const { name } = data
 
@@ -32,7 +32,7 @@ export default function Home() {
   }, []);
 
   return (
-    <section id='home' className='flex py-[30px] overflow-x-hidden flex-col md:flex-row items-center justify-evenly relative z-10'
+    <section id='hero' className='flex py-[30px] overflow-x-hidden flex-col md:flex-row items-center justify-evenly relative z-10'
     >
       <motion.div
         initial={{ opacity: 0, scale: 0.8, y: 40 }}

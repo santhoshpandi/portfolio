@@ -1,76 +1,105 @@
-import { useState } from 'react';
-import { FaLaptopCode } from "react-icons/fa";
-import { IoEye } from "react-icons/io5";
-
-interface Project {
-  title: string;
-  image: string;
-  description: string;
-  sourceCodeLink?: string;
-  previewLink?: string;
-  technologies: string[];
-}
+import type { Project } from '../../data/data.type'
+import comingSoonUrl from '../../assets/illustrations/coming_soon.jpg'
+import { useNavigate } from 'react-router'
 
 interface Props {
   project: Project
 }
 
-export default function ProjectTemplate({ project }: Props) {
-  const [slideUp, setSlideUp] = useState(false)
+function ProjectTemplate({ project }: Props) {
 
-  //Destructuring Props
-  const { title, image, description, sourceCodeLink, previewLink, technologies } = project
+  const { id, image, title, description, sourceCodeLink, previewLink, technologies, completedAt } = project
 
-  //Project Images available in Public folder
-  const imgUrl = '/portfolio/assets/project_images' + image
+  const monthYear = completedAt ? new Date(completedAt).toLocaleDateString("en-US", {
+    month: "short",
+    year: "numeric"
+  }) : null
 
+  const navigate = useNavigate();
+
+  let imgUrl = (image && image !== '')
+    ? "/portfolio/assets/project_images/" + image
+    : comingSoonUrl;
   return (
-    <div
-      onMouseEnter={() => setSlideUp(true)}
-      onMouseLeave={() => setSlideUp(false)}
-      className="relative z-[0] flex flex-col justify-center  rounded-lg hover:shadow-[0px_0px_4px_4px] hover:shadow-green-500 md:w-auto hover:scale-105 duration-150 cursor-grab">
+    <div onClick={() => navigate(`/projects/${id}`)}>
+      {/* Hero */}
+      <div className="grid md:grid-cols-2 gap-8 md:gap-10 items-center">
 
-      {/* --------  Image --------- */}
-      <img className='rounded-t-lg  md:h-[250px] w-full ' src={imgUrl} alt="image" />
+        <img
+          src={imgUrl}
+          alt={title}
+          onError={(e) => {
+            (e.target as HTMLImageElement).src = comingSoonUrl;
+          }}
+          className="rounded-xl shadow-lg border border-green-500/20 w-full"
+        />
 
-      {/* --------  hover part starts👇 --------- */}
+        <div>
 
-      <div className={`
-      ${slideUp ? 'md:h-[250px] h-full' : 'h-0 overflow-hidden'}
-       absolute top-0 duration-300 bg-slate-900 bg-opacity-95 text-white text-[15px] overflow-y-hidden flex flex-col justify-center items-center rounded-t-lg px-2`}>
-        <h1 className='m-2'>
-          {description}
-        </h1>
-        {/* --------  Technologies --------- */}
-        <ul className='flex flex-wrap gap-1 justify-evenly items-center py-1 mb-2'>
-          {
-            technologies.map((tech, index) => (
-              <li key={index} className='bg-[#C4B454] text-black px-2  rounded-sm'>{tech}</li>
-            ))
-          }
-        </ul>
-      </div>
+          <div className="text-3xl md:text-5xl font-bold text-green-400 mb-4 flex flex-wrap gap-3">
+            <h3>{title}</h3>
+            {monthYear && (
+              <span
+                className=" inline gap-1
+                      text-xs md:text-sm
+                      px-3 py-1
+                      rounded-full
+                      border border-green-400/40
+                      text-green-300
+                      shadow-[0_0_10px_rgba(34,197,94,0.35)]
+                    "
+              >
+                {monthYear}
+              </span>
+            )}
+          </div>
 
-      {/* --------  hover part ends☝ --------- */}
+          <p className="text-gray-300 leading-relaxed mb-6">
+            {description}
+          </p>
 
-      <div className='bg-green-800 text-white px-3  py-2 flex justify-between items-center gap-1.5 rounded-b-lg'>
-        <h1 className='font-semibold text-center md:text-base text-sm  '>{title}</h1>
+          {/* Tech Stack */}
+          <div className="flex flex-wrap gap-3 mb-8">
+            {technologies.map((tech,index) => (
+              <span
+                key={tech+index}
+                className="px-3 py-1 text-sm bg-green-400/10 border border-green-400/30 text-green-300 rounded-full"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
 
-        {/* --------  Links --------- */}
-        <div className='flex gap-5 justify-center text-2xl'>
-          {
-            sourceCodeLink &&
-            <a target='_blank' href={sourceCodeLink}> <FaLaptopCode
-              className='cursor-pointer hover:text-purple-300' /></a>
-          }
-          {
-            previewLink &&
-            <a target='_blank' href={previewLink}> <IoEye
-              className='cursor-pointer hover:text-pink-300' /></a>
-          }
+          {/* Buttons */}
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className="flex flex-wrap gap-4">
+
+            {previewLink && (
+              <a
+                href={previewLink}
+                target="_blank"
+                className="md:px-5 px-3  md:py-2 py-1  bg-green-400 text-black rounded-md hover:bg-green-300 transition"
+              >
+                Live Demo
+              </a>
+            )}
+
+            {sourceCodeLink && (
+              <a
+                href={sourceCodeLink}
+                target="_blank"
+                className="md:px-5 px-3  md:py-2 py-1  border border-green-400 text-green-400 rounded-md hover:bg-green-400 hover:text-black transition"
+              >
+                Source Code
+              </a>
+            )}
+
+          </div>
+
         </div>
-      </div>
-
-    </div>
+      </div></div>
   )
 }
+
+export default ProjectTemplate

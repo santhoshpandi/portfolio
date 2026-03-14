@@ -1,15 +1,15 @@
 import { ReactNebula } from "@flodlc/nebula";
 import { Suspense, lazy } from 'react'
 import Loader from './components/animations/Loader';
+import { Route, Routes } from "react-router";
+import ProjectDetails from "./pages/ProjectDetails";
+import ScrollToTop from "./components/ScrollToTop";
 
 const Header = lazy(() => import('./components/Header'))
-const Home = lazy(() => import('./components/Home'))
-const About = lazy(() => import('./components/About'))
-const Technologies = lazy(() => import('./components/Technologies'))
 const Footer = lazy(() => import('./components/Footer'))
-const Contact = lazy(() => import('./components/Contact'))
-const Projects = lazy(() => import('./components/Projects'))
-const Certification = lazy(() => import('./components/Certification'))
+const Home = lazy(() => import('./pages/Home'))
+const Projects = lazy(() => import('./pages/ProjectsPage'))
+
 
 function App() {
 
@@ -28,12 +28,12 @@ function App() {
       </div>
       <Suspense fallback={<Loader />}>
         <Header />
-        <Home />
-        <About />
-        <Certification />
-        <Technologies />
-        <Projects />
-        <Contact />
+          <ScrollToTop />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/projects/:id" element={<ProjectDetails />} />
+          </Routes>
         <Footer />
       </Suspense>
     </div>

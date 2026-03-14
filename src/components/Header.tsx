@@ -1,22 +1,39 @@
 import { useState, useEffect } from "react";
 import { FaDownload } from "react-icons/fa";
 import { ImMenu } from "react-icons/im";
+import { useLocation, useNavigate } from "react-router";
 
 export default function Header() {
   const [slideMenu, setSlideMenu] = useState(false);
   const [active, setActive] = useState<string>("home");
 
   const navItems = [
-    { id: "home", label: "Home" },
+    { id: "hero", label: "Home" },
     { id: "about", label: "About" },
     { id: "skills", label: "Skills" },
     { id: "projects", label: "Projects" },
     { id: "contact", label: "Contact" }
   ];
 
+  const location = useLocation();
+  const navigate = useNavigate();
+  const scrollToSection = (id: string) => {
+    if (location.pathname !== "/") {
+      navigate("/", { state: { section: id } });
+    } else {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   /* ---------- Intersection Observer ---------- */
   useEffect(() => {
-    const sections = document.querySelectorAll("section");
+
+    if (location.pathname !== "/") return;
+
+    const sections = navItems
+      .map(item => document.getElementById(item.id))
+      .filter(Boolean) as HTMLElement[];
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -36,7 +53,8 @@ export default function Header() {
     return () => {
       sections.forEach((section) => observer.unobserve(section));
     };
-  }, []);
+
+  }, [location.pathname]);
   /* ------------------------------------------- */
 
   return (
@@ -61,10 +79,10 @@ export default function Header() {
         ${slideMenu ? "h-[255px]" : "h-0 md:h-auto overflow-hidden md:overflow-visible"}`}
         >
           {navItems.map((item) => (
-            <a
+            <button
               key={item.id}
-              href={`#${item.id}`}
               onClick={() => {
+                scrollToSection(item.id);
                 setActive(item.id);
                 setSlideMenu(false);
               }}
@@ -72,7 +90,7 @@ export default function Header() {
             ${active === item.id ? "activeNav" : ""}`}
             >
               {item.label}
-            </a>
+            </button>
           ))}
         </div>
 
