@@ -3,17 +3,20 @@
 Welcome to my portfolio website👋! This site showcases my work, skills, and experience as a Developer. Feel free to browse through my projects and learn more about me.
 
 ## About
-A portfolio website developed using React, Javascript, Tailwind, Vite. It is also a responsive website available for both pc and mobile. 
+A portfolio website developed using React, Typescript, Tailwind, Vite. It is also a responsive website available for both pc and mobile. 
 
 ## Live Demo
 
-Developed by Santhosh Pandi
+Developed by Santhosh Pandi 💕
 
 [Live Demo👆](https://santhoshpandi.github.io/portfolio/)
 
 ## ScreenShots
-<img src="src/assets/screenshots/pc_view.png" />
-<img src="src/assets/screenshots/mobile_view.png" width="200" />
+<img src="src/assets/screenshots/pc_view_1.jpg" />
+<img src="src/assets/screenshots/pc_view_2.jpg" />
+<img src="src/assets/screenshots/mobile_view_1.jpg" width="200" />
+&nbsp;
+<img src="src/assets/screenshots/mobile_view_2.jpg" width="200" />
 
 ## Features
 
@@ -54,7 +57,7 @@ To view or contribute to this project locally, follow these steps:
 
   The website will be available at http://localhost:5173
 
-
+<hr>
 
 
 
