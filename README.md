@@ -14,8 +14,7 @@ Developed by Santhosh Pandi 💕
 ## ScreenShots
 <img src="src/assets/screenshots/pc_view_1.jpg" />
 <img src="src/assets/screenshots/pc_view_2.jpg" />
-<img src="src/assets/screenshots/mobile_view_1.jpg" width="200" />
-&nbsp;
+<img src="src/assets/screenshots/mobile_view_1.jpg" width="200" />&nbsp;
 <img src="src/assets/screenshots/mobile_view_2.jpg" width="200" />
 
 ## Features
