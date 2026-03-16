@@ -136,21 +136,6 @@
       "completedAt":"2024-11-29"
     },
     {
-      "id": 4,
-      "title": "Broad Store - Stripe Payment",
-      "image": "/broad_store_stripe.png",
-      "description": "This application is a MERN stack project (MongoDB, Express, React, Node.js) integrated with Stripe for handling payments. It's designed to enable users to complete transactions securely through Stripe's payment gateway.",
-      "sourceCodeLink": "https://github.com/santhoshpandi/broad-store-stripe",
-      "technologies": [
-        "React",
-        "Stripe",
-        "NodeJs",
-        "ExpressJs",
-        "MongoDB"
-      ],
-      "completedAt":"2025-03-28"
-    },
-    {
       "id": 5,
       "title": "Datrix - A Dashboard Template",
       "image": "/datrix.png",
@@ -210,7 +195,7 @@
     {
       "id": 9,
       "title": "WhisperWalls - A Social Whispering Platform",
-      "image": "",
+      "image": "/whisper_walls.png",
       "description": "A creative social platform where users share anonymous “whispers” filtered by mood and category. Implemented features like Category-based filtering, Personalized charts, surprise discovery tool, and user-only whisper walls.",
       "previewLink": "https://whisper-walls-server.vercel.app",
       "technologies": [

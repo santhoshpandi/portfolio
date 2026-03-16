@@ -43,14 +43,14 @@ export default function ProjectCard({ project }: Props) {
     >
 
       {/* Image */}
-      <div className="overflow-hidden">
+      <div className="overflow-hidden aspect-[7/5]">
         <img
           src={imgUrl}
           alt={title}
           onError={(e) => {
             (e.target as HTMLImageElement).src = comingSoonUrl;
           }}
-          className="w-full h-[220px] object-cover transition duration-500 group-hover:scale-110"
+          className="w-full h-full object-cover transition duration-500 group-hover:scale-110"
         />
       </div>
 
