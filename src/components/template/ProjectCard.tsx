@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import type { Project } from "../../data/data.type";
 import comingSoonUrl from '../../assets/illustrations/coming_soon.jpg'
 import { FiCalendar } from "react-icons/fi";
-import { parseDate } from "../../utils/date";
+import { parseDate } from "../../utils/helper";
 
 interface Props {
   project: Project;

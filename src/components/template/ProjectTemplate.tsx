@@ -1,7 +1,7 @@
 import type { Project } from '../../data/data.type'
 import comingSoonUrl from '../../assets/illustrations/coming_soon.jpg'
 import { useNavigate } from 'react-router'
-import { parseDate } from '../../utils/date'
+import { parseDate } from '../../utils/helper'
 
 interface Props {
   project: Project

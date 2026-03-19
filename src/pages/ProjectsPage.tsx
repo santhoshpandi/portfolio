@@ -2,7 +2,7 @@ import data from "../data/data.json";
 import ProjectCard from "../components/template/ProjectCard";
 import { Link } from "react-router";
 import type { Project } from "../data/data.type";
-import { parseDate } from "../utils/date";
+import { parseDate } from "../utils/helper";
 
 export default function ProjectsPage() {
 

@@ -3,7 +3,7 @@ import { motion } from "framer-motion"
 import { Link } from "react-router"
 import ProjectCard from "./template/ProjectCard"
 import type { Project } from "../data/data.type"
-import { parseDate } from "../utils/date"
+import { parseDate } from "../utils/helper"
 
 export default function Projects() {
 
