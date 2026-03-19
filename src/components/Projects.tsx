@@ -3,18 +3,21 @@ import { motion } from "framer-motion"
 import { Link } from "react-router"
 import ProjectCard from "./template/ProjectCard"
 import type { Project } from "../data/data.type"
+import { parseDate } from "../utils/date"
 
 export default function Projects() {
 
   const { projects } = data as { projects: Project[] };
 
-  const sortedProjects = [...projects].sort((a, b) => {
-    const dateDiff =
-      (new Date(b.completedAt ?? 0).getTime()) -
-      (new Date(a.completedAt ?? 0).getTime());
-
-    return dateDiff !== 0 ? dateDiff : b.id - a.id;
-  });
+   const sortedProjects = [...projects].sort((a, b) => {
+  
+     const parsedADate = parseDate(a.completedAt)
+     const parsedBDate = parseDate(b.completedAt)
+  
+      const dateDiff = parsedBDate.getTime() - parsedADate.getTime() ;
+  
+      return dateDiff !== 0 ? dateDiff : b.id - a.id;
+    });
 
   return (
     <section id="projects" className="w-full max-w-6xl mx-auto py-10">

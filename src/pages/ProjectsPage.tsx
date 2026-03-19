@@ -2,15 +2,18 @@ import data from "../data/data.json";
 import ProjectCard from "../components/template/ProjectCard";
 import { Link } from "react-router";
 import type { Project } from "../data/data.type";
+import { parseDate } from "../utils/date";
 
 export default function ProjectsPage() {
 
  const { projects } = data as { projects: Project[] };
 
   const sortedProjects = [...projects].sort((a, b) => {
-    const dateDiff =
-      (new Date(b.completedAt ?? 0).getTime()) -
-      (new Date(a.completedAt ?? 0).getTime());
+
+   const parsedADate = parseDate(a.completedAt)
+   const parsedBDate = parseDate(b.completedAt)
+
+    const dateDiff = parsedBDate.getTime() - parsedADate.getTime() ;
 
     return dateDiff !== 0 ? dateDiff : b.id - a.id;
   });

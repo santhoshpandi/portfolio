@@ -1,6 +1,7 @@
 import type { Project } from '../../data/data.type'
 import comingSoonUrl from '../../assets/illustrations/coming_soon.jpg'
 import { useNavigate } from 'react-router'
+import { parseDate } from '../../utils/date'
 
 interface Props {
   project: Project
@@ -10,7 +11,7 @@ function ProjectTemplate({ project }: Props) {
 
   const { id, image, title, description, sourceCodeLink, previewLink, technologies, completedAt } = project
 
-  const monthYear = completedAt ? new Date(completedAt).toLocaleDateString("en-US", {
+  const monthYear = completedAt ? parseDate(completedAt).toLocaleDateString("en-US", {
     month: "short",
     year: "numeric"
   }) : null

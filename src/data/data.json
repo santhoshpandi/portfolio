@@ -133,7 +133,7 @@
         "CSS",
         "JS"
       ],
-      "completedAt":"2024-11-29"
+      "completedAt":"29-11-2024"
     },
     {
       "id": 5,
@@ -147,7 +147,7 @@
         "TailWind",
         "Vite"
       ],
-      "completedAt":"2025-02-22"
+      "completedAt":"22-02-2025"
     },
     {
       "id": 6,
@@ -162,7 +162,7 @@
         "MongoDB",
         "Tailwind"
       ],
-      "completedAt":"2025-03-29"
+      "completedAt":"29-03-2025"
     },
     {
       "id": 7,
@@ -176,7 +176,7 @@
         "Tailwind",
         "OpenRouter API"
       ],
-      "completedAt": "2025-08-22"
+      "completedAt": "22-08-2025"
     },
     {
       "id": 8,
@@ -190,13 +190,14 @@
         "Tailwind",
         "Gemini API"
       ],
-      "completedAt": "2025-08-24"
+      "completedAt": "24-08-2025"
     },
     {
       "id": 9,
       "title": "WhisperWalls - A Social Whispering Platform",
       "image": "/whisper_walls.png",
       "description": "A creative social platform where users share anonymous “whispers” filtered by mood and category. Implemented features like Category-based filtering, Personalized charts, surprise discovery tool, and user-only whisper walls.",
+      "sourceCodeLink":"https://github.com/santhoshpandi/whisper-walls",
       "previewLink": "https://whisper-walls-server.vercel.app",
       "technologies": [
         "React",
@@ -204,7 +205,23 @@
         "Node & Express",
         "MongoDB"
       ],
-      "completedAt": "2026-03-14"
+      "completedAt": "14-03-2026"
+    },
+    {
+      "id": 10,
+      "title": "TaskTracker - AI-powered Task Extractor",
+      "image": "/task_tracker.png",
+      "description": "Transform meeting transcripts into actionable tasks📒 using AI 🤖. This app leverages Gemini API to extract structured task data and provides a clean UI for managing task history.",
+      "sourceCodeLink": "https://github.com/santhoshpandi/TaskTracker",
+      "previewLink": "https://task-tracker-mu-vert.vercel.app/",
+      "technologies": [
+        "React",
+        "Typescript",
+        "Express",
+        "MongoDB",
+        "Gemini API"
+      ],
+      "completedAt": "15-02-2026"
     }
   ]
 }

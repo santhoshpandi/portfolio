@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import type { Project } from "../../data/data.type";
 import comingSoonUrl from '../../assets/illustrations/coming_soon.jpg'
 import { FiCalendar } from "react-icons/fi";
+import { parseDate } from "../../utils/date";
 
 interface Props {
   project: Project;
@@ -19,7 +20,7 @@ export default function ProjectCard({ project }: Props) {
     ? "/portfolio/assets/project_images/" + image
     : comingSoonUrl;
 
-  const monthYear = completedAt ? new Date(completedAt).toLocaleDateString("en-US", {
+  const monthYear = completedAt ? parseDate(completedAt).toLocaleDateString("en-US", {
     month: "short",
     year: "numeric"
   }) : null
